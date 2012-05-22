@@ -29,7 +29,7 @@ import javax.persistence.Transient;
 @NamedQuery(name = "findAllOrders", query = "SELECT o FROM Order o "
 + "ORDER BY o.orderId")
 public class Order implements java.io.Serializable {
-    private Collection<LineItem> lineItems;
+    private Collection<LineItem> lineItems = new ArrayList<LineItem>();
     private Date lastUpdate;
     private Integer orderId;
     private String shipmentInfo;

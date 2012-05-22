@@ -15,6 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.ejb.EJBException;
+import javax.ejb.Lock;
+import javax.ejb.LockType;
+import javax.ejb.Singleton;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,7 +28,8 @@ import order.entity.PartKey;
 import order.entity.Vendor;
 import order.entity.VendorPart;
 
-@Stateful
+@Singleton
+@Lock(LockType.READ)
 public class RequestBean {
 	private static Logger logger = Logger.getLogger("order.ejb.RequestBean");
 	@PersistenceContext

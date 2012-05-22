@@ -14,6 +14,7 @@ package order.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.DependsOn;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -22,6 +23,7 @@ import javax.ejb.Startup;
  * 
  * @author ian
  */
+@DependsOn({ "RequestBean" })
 @Singleton
 @Startup
 public class ConfigBean {
