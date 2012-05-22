@@ -49,8 +49,7 @@ public class OrderManager {
 	public List<Order> getOrders() {
 		try {
 			// TODO remove
-			// System.out.println("[OrderManager.getOrders] request = " +
-			// request);
+			System.out.println("[OrderManager.getOrders] request = " + request);
 			this.orders = request.getOrders();
 		} catch (Exception e) {
 			e.printStackTrace();

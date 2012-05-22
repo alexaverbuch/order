@@ -28,6 +28,8 @@ import order.entity.PartKey;
 import order.entity.Vendor;
 import order.entity.VendorPart;
 
+//@Stateful
+// TODO
 @Singleton
 @Lock(LockType.READ)
 public class RequestBean {
@@ -127,7 +129,7 @@ public class RequestBean {
 	public List<Order> getOrders() {
 		try {
 			// TODO remove
-			// System.out.println("[RequestBean.getOrders] em = " + em);
+			System.out.println("[RequestBean.getOrders] em = " + em);
 			return (List<Order>) em.createNamedQuery("findAllOrders")
 					.getResultList();
 		} catch (Exception e) {
