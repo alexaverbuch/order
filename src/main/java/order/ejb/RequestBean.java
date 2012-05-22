@@ -38,27 +38,12 @@ public class RequestBean {
 	public void createPart(String partNumber, int revision, String description,
 			java.util.Date revisionDate, String specification,
 			Serializable drawing) {
-
-		System.out.println("[RequestBean] OUT 1");
-
 		try {
 			Part part = new Part(partNumber, revision, description,
 					revisionDate, specification, drawing);
-
-			System.out.println("[RequestBean] OUT 2");
-
 			logger.info("Created part " + partNumber + "-" + revision);
-
-			System.out.println("[RequestBean] OUT 3");
-
 			em.persist(part);
-
-			System.out.println("[RequestBean] OUT 4");
-
 			logger.info("Persisted part " + partNumber + "-" + revision);
-
-			System.out.println("[RequestBean] OUT 5");
-
 		} catch (Exception ex) {
 			throw new EJBException(ex.getMessage());
 		}
@@ -141,6 +126,8 @@ public class RequestBean {
 
 	public List<Order> getOrders() {
 		try {
+			// TODO remove
+			// System.out.println("[RequestBean.getOrders] em = " + em);
 			return (List<Order>) em.createNamedQuery("findAllOrders")
 					.getResultList();
 		} catch (Exception e) {
