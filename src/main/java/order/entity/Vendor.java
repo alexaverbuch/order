@@ -9,6 +9,7 @@
 
 package order.entity;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import static javax.persistence.CascadeType.ALL;
 import javax.persistence.Column;
@@ -30,7 +31,7 @@ import javax.persistence.Table;
     + "ORDER BY l.vendorPart.vendor.name")
 })
 public class Vendor implements java.io.Serializable {
-    private Collection<VendorPart> vendorParts;
+    private Collection<VendorPart> vendorParts = new ArrayList<VendorPart>();
     private String address;
     private String contact;
     private String name;
